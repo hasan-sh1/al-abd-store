@@ -82,14 +82,14 @@
     glow.style.setProperty('--y', gy.toFixed(1) + 'px');
  
     ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = '#e8c872';
+    ctx.fillStyle = '#f2c3b0';
     for (const m of motes) {
       m.y -= m.v; m.x += Math.sin(t / 2500 + m.p) * .25 * dpr;
       if (m.y < -5) { m.y = h + 5; m.x = Math.random() * w; }
       ctx.globalAlpha = m.a * (.6 + .4 * Math.sin(t / 900 + m.p));
       ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, 6.28); ctx.fill();
     }
-    ctx.fillStyle = '#f6e3a8';
+    ctx.fillStyle = '#fff0e6';
     sparks = sparks.filter(s => s.life > 0);
     for (const s of sparks) {
       s.x += s.vx; s.y += s.vy; s.vx *= .96; s.vy = s.vy * .96 + .02 * dpr; s.life -= .022;
